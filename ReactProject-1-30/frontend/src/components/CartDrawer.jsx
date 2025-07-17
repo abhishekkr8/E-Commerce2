@@ -47,7 +47,7 @@ export default function CartDrawer() {
   }, 0);
 
   const DrawerList = (
-    <Box sx={{ width: 400 }} role="presentation">
+    <Box sx={{ width: 400 }} role="presentation" className="relative">
       <div className="p-4 flex justify-between items-center">
         <h1 className="text-3xl font-semibold">My Cart</h1>
 
@@ -56,15 +56,15 @@ export default function CartDrawer() {
 
       <Divider />
 
-      <h1 className="text-end px-2 text-xl font-semibold text-red-400 hover:text-red-700 cursor-pointer">
+      <h1 className="text-end p-2 text-xl font-semibold text-red-400">
         <span
-          className="hover:text-red-900 cursor-pointer"
+          className="hover:text-red-700 cursor-pointer"
           onClick={onClearCart}
         >
           Clear cart
         </span>
       </h1>
-      <div>
+      <div className="pb-20">
         {cartItems.length === 0 ? (
           <h1 className="text-center font-semibold">Cart is empty</h1>
         ) : (
@@ -82,7 +82,7 @@ export default function CartDrawer() {
         )}
       </div>
       <Divider />
-      <h1 className="text-center absolute bg-white w-full bottom-0 right-0 text-2xl pe-3">
+      <h1 className="text-center absolute py-5 bg-white w-full bottom-0 right-0 text-2xl pe-3">
         Total Price: Rs. {Math.round(totalPrice)}
       </h1>
     </Box>
